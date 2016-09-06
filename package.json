@@ -1,0 +1,14 @@
+{
+  "name": "quirky-crake",
+  "version": "1.0.0",
+  "description": "A to do list app. # To Do List ## Description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^1.13.2"
+  }
+}
