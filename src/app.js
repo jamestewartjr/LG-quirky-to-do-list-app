@@ -1,21 +1,27 @@
-import database from './database/db'
-import thingTemplate from './views/thing.pug'
-
-const html = thingTemplate({ things: [1,2,3,4,'hi world']})
+import database, { getData } from './database/db'
+import listingTemplate from './views/landing.pug'
 
 
-const content = document.getElementById( 'content' )
-const todoItemTitle = document.getElementById('title')
+const loadListingPage = () => {
+  const { todos } = getData()
 
-todoItemTitle.value  
-  // complete: document.getElementById('complete')
+  document.getElementById( 'content' ).innerHTML =
+    listingTemplate({ todos })
 
+  bindEvents()
+}
 
-// const create = document.onclick( database.createTodo(todoItem) )
+const bindEvents = () => {
+  const addButton = document.querySelector( '.add-task button' )
 
+  addButton.addEventListener( 'click', event => {
+    const input = document.getElementById( 'new-item-title' )
 
-content.innerHTML = html
+    const { todos } = database.createTodo( input.value )
 
-console.log('title', title)
-console.log('todoItem', todoItemTitle )
-console.log(create)
+    input.value = ''
+    loadListingPage( todos )
+  })
+}
+
+loadListingPage( [] )

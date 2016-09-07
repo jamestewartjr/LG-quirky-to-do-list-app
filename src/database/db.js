@@ -9,7 +9,7 @@ const DATABASE_NAME = 'quirky-crake'
 const getData = () => {
   const result = JSON.parse( localStorage.getItem( DATABASE_NAME ) )
 
-  return result === undefined ? { nextIndex: 0, todos: [] } : result
+  return result === undefined || result === null ? { nextId: 0, todos: [] } : result
 }
 
 const saveData = data => 
