@@ -1,6 +1,7 @@
 import database, { getData } from './database/db'
-import listingTemplate from './views/landing.pug'
+import bindTodoEdit from './app/editButton'
 
+import listingTemplate from './views/landing.pug'
 
 const loadListingPage = () => {
   const { todos } = getData()
@@ -8,10 +9,11 @@ const loadListingPage = () => {
   document.getElementById( 'content' ).innerHTML =
     listingTemplate({ todos })
 
-  bindEvents()
+  bindAddButton()
+  bindTodoEdit( loadListingPage )
 }
 
-const bindEvents = () => {
+const bindAddButton = () => {
   const addButton = document.querySelector( '.add-task button' )
 
   addButton.addEventListener( 'click', event => {
@@ -20,8 +22,8 @@ const bindEvents = () => {
     const { todos } = database.createTodo( input.value )
 
     input.value = ''
-    loadListingPage( todos )
+    loadListingPage()
   })
 }
 
-loadListingPage( [] )
+loadListingPage()
