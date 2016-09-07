@@ -1,5 +1,5 @@
-const listTodos = () => {
+import { getData } from './db'
 
-}
+const allTodos = () => getData().todos
 
-export default listTodos
+export default allTodos

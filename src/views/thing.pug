@@ -1,3 +1,10 @@
+
 div
   each thing in things
     span= thing
+
+  form(action="/", method="get") Our to do
+    br
+    input(type="text", id="title", name="titletoo" value="Title")
+
+    button(type="submit", id="create", value="Create") Create
