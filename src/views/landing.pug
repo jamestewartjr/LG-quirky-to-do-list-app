@@ -7,11 +7,11 @@ h1 Welcome to DIDID
 .listing
   each todo in todos
     .task
-      input(type='checkbox', id=`${todo.id}`, checked='checked')
-      span.title= todo.title
+      input(type='checkbox', data-id=`${todo.id}`, checked='checked')
+      span
+        span.title(data-id=`${todo.id}`)= todo.title
 
-      a(class='edit', id=`${todo.id}`, href='#') Edit
-      a(class='delete', id=`${todo.id}`, href='#') Delete
+      a(class='delete', data-id=`${todo.id}`, href='#') Delete
 
 .legend
   div
