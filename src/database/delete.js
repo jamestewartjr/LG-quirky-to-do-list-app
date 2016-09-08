@@ -8,11 +8,12 @@ const deleteTodo = id => {
   saveData( Object.assign( {}, data, 
     { todos: 
       [
-        ...data.slice( 0, index ),
-        ...data.slice( index + 1 )
+        ...data.todos.slice( 0, index ),
+        ...data.todos.slice( index + 1 )
       ]
     })
   )
+
 }
 
 export default deleteTodo
