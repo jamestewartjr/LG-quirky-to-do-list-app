@@ -7,7 +7,7 @@ h1 Welcome to DIDID
 .listing
   each todo in todos
     .task
-      input(type='checkbox', data-id=`${todo.id}`, unchecked='true')
+      input(type='checkbox', data-id=`${todo.id}`, checked=todo.completed)
       
       span
         span.title(data-id=`${todo.id}`)= todo.title
