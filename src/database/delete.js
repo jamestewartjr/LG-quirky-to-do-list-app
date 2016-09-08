@@ -4,14 +4,12 @@ import allTodos from './list'
 const deleteTodo = id => {
   const data = getData()
   const index = data.todos.findIndex( todo => todo.id === id )
-  // removeItem(index)
-  console.log('DelIndex', index)
-  console.log('DlId', id)
+
   saveData( Object.assign( {}, data, 
     { todos: 
       [
-        ...data.slice( 0, index ),
-        ...data.slice( index + 1 )
+        ...data.todos.slice( 0, index ),
+        ...data.todos.slice( index + 1 )
       ]
     })
   )
