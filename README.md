@@ -13,17 +13,17 @@ Create a front to do list SPA.
 - Go through the whole process of creating and deploying a working app in a week.
 
 ## Specifications
-- [ ] Stores items locally.
-- [ ] Is a single page JS application (SPA).
+- [X] Stores items locally.
+- [X] Is a single page JS application (SPA).
 - [X] The artifact produced is properly licensed, preferably with the [MIT license][mit-license].
 
 #### User Stories:
 As a user...
-- [ ] I can create to do list items.
+- [X] I can create to do list items.
 - [ ] I can check items off as complete.
 - [ ] I can rearrange to do list items. 
-- [ ] I can delete unwanted to do list items.
-- [ ] I can edit the text on existing to do's.
+- [X] I can delete unwanted to do list items.
+- [X] I can edit the text on existing to do's.
 
 ## Quality Rubric
 - [ ] Documented - Contains instructions for a user to set up app locally
