@@ -21,7 +21,7 @@ Create a front to do list SPA.
 As a user...
 - [X] I can create to do list items.
 - [ ] I can check items off as complete.
-- [ ] I can rearrange to do list items. 
+- [X] I can rearrange to do list items. 
 - [X] I can delete unwanted to do list items.
 - [X] I can edit the text on existing to do's.
 

@@ -7,10 +7,14 @@ h1 Welcome to DIDID
 .listing
   each todo in todos
     .task
-      input(type='checkbox', data-id=`${todo.id}`, id="complete", unchecked='true')
+      input(type='checkbox', data-id=`${todo.id}`, unchecked='true')
+      
       span
         span.title(data-id=`${todo.id}`)= todo.title
-      button(class='delete', data-id=`${todo.id}` id='delete-action') X
+
+      button(class='delete', data-id=`${todo.id}`) X
+      button(class='up', data-id=`${todo.id}`) +
+      button(class='down', data-id=`${todo.id}`) -
 
 .legend
   div

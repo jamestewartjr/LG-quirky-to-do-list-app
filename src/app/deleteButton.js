@@ -6,7 +6,7 @@ const deleteEvent = reload => event => {
 }
 
 const bindDeleteButton = reload => {
-  Array.from( document.querySelectorAll( '.task button' ) )
+  Array.from( document.querySelectorAll( 'button.delete' ) )
     .forEach( element => element.addEventListener( 'click', deleteEvent( reload ) ))
 }
 

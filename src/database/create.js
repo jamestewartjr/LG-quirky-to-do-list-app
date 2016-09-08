@@ -6,9 +6,10 @@ const createTodo = title => {
   const item = {
     title,
     complete: false,
-    id: nextId
+    id: nextId,
+    order: ( todos || [] ).length
   }
-  
+
   const data = { 
     nextId: nextId + 1,
     todos: [ item, ...todos ]
