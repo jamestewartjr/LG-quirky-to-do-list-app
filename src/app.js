@@ -31,9 +31,8 @@ const bindDeleteButton = () => {
   const deleteButton = document.querySelector( '.task button' )
   console.log('1', deleteButton)
   deleteButton.addEventListener( 'click', event => {
-    const input = document.getElementById( 'delete-action')
-    console.log('dataid', )
-    console.log('input',input)
+    const input = document.getElementsByClassName( 'title')
+    console.log('input', input)
 
     const { todos } = database.deleteTodo( input )
     loadListingPage()
