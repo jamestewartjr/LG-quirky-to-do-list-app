@@ -68,4 +68,4 @@ const bindDownButtons = reload => {
     .forEach( button => button.addEventListener( 'click', moveDown( reload )))  
 }
 
-export { bindUpButtons, bindDownButtons }
+export { bindUpButtons, bindDownButtons, todoSort }

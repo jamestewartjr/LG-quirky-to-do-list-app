@@ -18,17 +18,6 @@ const completeHandler = reload => event => {
   reload()
 }
 
-
-const completeHandler2 = reload => event => {
-  const id = parseInt( event.target.dataset.id )
-  console.log( event.target.checked )
-  const complete = event.target.checked
-
-  database.updateTodo( id, { complete })  
-  reload()
-}
-
-
 const swapHandler = reload => event => {
   const { innerText: text } = event.target
   const { id } = event.target.dataset
@@ -47,8 +36,6 @@ const setupEdit = reload => {
   Array.from( document.querySelectorAll('span.checkbox' ) )
     .forEach( element => element.addEventListener( 'click', completeHandler( reload ) ))
 
-  Array.from( document.querySelectorAll('input[type=checkbox]' ) )
-    .forEach( element => element.addEventListener( 'change', completeHandler2( reload ) ))
-}
+ }
 
 export default setupEdit
