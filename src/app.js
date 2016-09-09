@@ -22,12 +22,4 @@ const loadListingPage = () => {
   completeStatus( loadListingPage )
 }
 
-const completeStatus = () => {
-  // check for number of all items
-  // check which items are true
-  // count items that are true
-  // divide true/ total * 100
-  // render in pug
-}
-
 loadListingPage()
