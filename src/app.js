@@ -9,7 +9,7 @@ import listingTemplate from './views/landing.pug'
 const loadListingPage = () => {
   const todos = getData().todos.sort( todoSort )
   const completed = todos.filter( todo => todo.complete )
-  const percentComplete = Math.round( 100 * completed.length / todos.length * 1.0 )
+  const percentComplete = Math.round( 100 * completed.length / todos.length * 1.0 ) || 0
 
   document.getElementById( 'content' ).innerHTML =
     listingTemplate({ todos, percentComplete })
@@ -19,15 +19,6 @@ const loadListingPage = () => {
   bindTodoDelete( loadListingPage )
   bindUpButtons( loadListingPage )
   bindDownButtons( loadListingPage )
-  completeStatus( loadListingPage )
-}
-
-const completeStatus = () => {
-  // check for number of all items
-  // check which items are true
-  // count items that are true
-  // divide true/ total * 100
-  // render in pug
 }
 
 loadListingPage()
