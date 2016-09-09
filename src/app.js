@@ -11,8 +11,6 @@ const loadListingPage = () => {
   const completed = todos.filter( todo => todo.complete )
   const percentComplete = Math.round( 100 * completed.length / todos.length * 1.0 )
 
-  console.log( percentComplete )
-
   document.getElementById( 'content' ).innerHTML =
     listingTemplate({ todos, percentComplete })
 

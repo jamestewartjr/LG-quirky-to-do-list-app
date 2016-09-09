@@ -1,12 +1,16 @@
-h1 Welcome to DIDID
-  span.label.label-success(style='margin-left: 12px;')= `${percentComplete}%`
+h1.text-center Welcome to DIDIᗡ
+
+p.lead.text-center  Welcome to DIDIᗡ ("Did it") helping you achieve more than mediocrity. Please add tasks below. To edit the task title, click on the task's text. 
+
+h2.text-center
+  span.label.label-success(style='margin-left: 12px;')= `${percentComplete}% Complete`
 
 .add-task
   form.form-inline(style='margin-bottom: 10px;')
     .form-group
-      input.form-control(type='text', name='new-item-title', id='new-item-title')
+      input.form-control(type='text', name='new-item-title', id='new-item-title', placeholder= 'New Task Name')
 
-    button.btn.btn-default(type='submit') Add Task
+    button.btn.btn-info(type='submit') Add Task
 
 ul.list-group
   each todo in todos
