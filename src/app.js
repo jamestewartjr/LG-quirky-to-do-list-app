@@ -19,7 +19,6 @@ const loadListingPage = () => {
   bindTodoDelete( loadListingPage )
   bindUpButtons( loadListingPage )
   bindDownButtons( loadListingPage )
-  completeStatus( loadListingPage )
 }
 
 loadListingPage()

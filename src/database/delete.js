@@ -1,8 +1,10 @@
 import { getData, saveData } from './db'
+import { todoSort } from '../app/orderButtons'
 import allTodos from './list'
 
 const reorder = todos =>
-  todos.map( (todo, index) => Object.assign( {}, todo, { order: index }))
+  todos.sort( todoSort )
+    .map( (todo, index) => Object.assign( {}, todo, { order: todos.length - index }))
 
 const deleteTodo = id => {
   const data = getData()

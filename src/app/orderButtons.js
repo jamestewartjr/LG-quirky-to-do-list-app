@@ -1,9 +1,9 @@
 import database, { getData, saveData } from '../database/db'
 
 const todoSort = (one, two) => {
-  if( one.order < two.order ) {
+  if( one.order > two.order ) {
     return -1
-  } else if( one.order > two.order ) {
+  } else if( one.order < two.order ) {
     return 1
   } else {
     return 0
