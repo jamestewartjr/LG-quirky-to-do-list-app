@@ -2,16 +2,19 @@ import { getData } from './database/db'
 import bindAddButton from './app/addButton'
 import bindTodoEdit from './app/editButton'
 import bindTodoDelete from './app/deleteButton'
-import { bindUpButtons, bindDownButtons } from './app/orderButtons'
+import { bindUpButtons, bindDownButtons, todoSort } from './app/orderButtons'
 
 import listingTemplate from './views/landing.pug'
 
 const loadListingPage = () => {
-  console.log( 'loadListingPage' )
-  const { todos } = getData()
+  const todos = getData().todos.sort( todoSort )
+  const completed = todos.filter( todo => todo.complete )
+  const percentComplete = Math.round( 100 * completed.length / todos.length * 1.0 )
+
+  console.log( percentComplete )
 
   document.getElementById( 'content' ).innerHTML =
-    listingTemplate({ todos })
+    listingTemplate({ todos, percentComplete })
 
   bindAddButton( loadListingPage )
   bindTodoEdit( loadListingPage )

@@ -1,34 +1,29 @@
 h1 Welcome to DIDID
+  span.label.label-success(style='margin-left: 12px;')= `${percentComplete}%`
 
 .add-task
-  input(type='text', name='new-item-title', id='new-item-title')
-  button Add Task
+  form.form-inline(style='margin-bottom: 10px;')
+    .form-group
+      input.form-control(type='text', name='new-item-title', id='new-item-title')
+
+    button.btn.btn-default(type='submit') Add Task
 
 ul.list-group
   each todo in todos
     li.list-group-item
-      input(type='checkbox', data-id=`${todo.id}`, checked=todo.complete)
-      span.checkbox(data-id=`${todo.id}`, data-complete=`${todo.complete}`, style="padding: 8px")
+      span(style='margin-right: 7px;')
         if( todo.complete )
-          | ✔️
+          span.pull-left.checkbox.glyphicon.glyphicon-check(data-id=`${todo.id}`, data-complete=`${todo.complete}`, style='margin-top: 0px; font-size: 18px;')
         else
-          | 😑
+          span.pull-left.checkbox.glyphicon.glyphicon-unchecked(data-id=`${todo.id}`, data-complete=`${todo.complete}`, style='margin-top: 0px; font-size: 18px;')
 
       span
-        span.title(data-id=`${todo.id}`)= todo.title
+        span.title(data-id=`${todo.id}`, value=`${todo.title}`)= todo.title
 
-      .btn-group.btn-group-xs(role='group')
-        button.btn.btn-default(type='button', class='up', data-id=`${todo.id}`)
-          span.glyphicon.glyphicon-arrow-up(aria-hidden='true')
-        button.btn.btn-default(type='button', class='down', data-id=`${todo.id}`)
-          span.glyphicon.glyphicon-arrow-down(aria-hidden='true')
-        button.btn.btn-danger(type='button', class='delete', data-id=`${todo.id}`) 
-          span.glyphicon.glyphicon-ban-circle(aria-hidden='true')
-
-.legend
-  div
-  | Edit
-  div
-  | Delete
-  div
-  | Add
+      .btn-group.btn-group-xs.pull-right(role='group')
+        button.up.btn.btn-default(type='button', data-id=`${todo.id}`)
+          span.glyphicon.glyphicon-arrow-up(aria-hidden='true', data-id=`${todo.id}`)
+        button.down.btn.btn-default(type='button', data-id=`${todo.id}`)
+          span.glyphicon.glyphicon-arrow-down(aria-hidden='true', data-id=`${todo.id}`)
+        button.delete.btn.btn-danger(type='button', data-id=`${todo.id}`) 
+          span.glyphicon.glyphicon-ban-circle(aria-hidden='true', data-id=`${todo.id}`)

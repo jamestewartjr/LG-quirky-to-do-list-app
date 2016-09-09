@@ -12,11 +12,13 @@ const bindAddButton = reload => {
   const input = document.getElementById( 'new-item-title' ) 
 
   addButton.addEventListener( 'click', event => {
+    event.preventDefault()
     submitTodo( reload, input )
   })
 
   input.addEventListener( 'keypress', event => {
     if( event.charCode === 13 ) {
+      event.preventDefault()
       submitTodo( reload, input )
     }
   })
