@@ -7,6 +7,7 @@ import { bindUpButtons, bindDownButtons } from './app/orderButtons'
 import listingTemplate from './views/landing.pug'
 
 const loadListingPage = () => {
+  console.log( 'loadListingPage' )
   const { todos } = getData()
 
   document.getElementById( 'content' ).innerHTML =

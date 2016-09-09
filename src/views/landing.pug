@@ -4,9 +4,9 @@ h1 Welcome to DIDID
   input(type='text', name='new-item-title', id='new-item-title')
   button Add Task
 
-.listing
+ul.list-group
   each todo in todos
-    .task
+    li.list-group-item
       input(type='checkbox', data-id=`${todo.id}`, checked=todo.complete)
       span.checkbox(data-id=`${todo.id}`, data-complete=`${todo.complete}`, style="padding: 8px")
         if( todo.complete )
@@ -17,9 +17,13 @@ h1 Welcome to DIDID
       span
         span.title(data-id=`${todo.id}`)= todo.title
 
-      button(class='delete', data-id=`${todo.id}`) X
-      button(class='up', data-id=`${todo.id}`) +
-      button(class='down', data-id=`${todo.id}`) -
+      .btn-group.btn-group-xs(role='group')
+        button.btn.btn-default(type='button', class='up', data-id=`${todo.id}`)
+          span.glyphicon.glyphicon-arrow-up(aria-hidden='true')
+        button.btn.btn-default(type='button', class='down', data-id=`${todo.id}`)
+          span.glyphicon.glyphicon-arrow-down(aria-hidden='true')
+        button.btn.btn-danger(type='button', class='delete', data-id=`${todo.id}`) 
+          span.glyphicon.glyphicon-ban-circle(aria-hidden='true')
 
 .legend
   div
