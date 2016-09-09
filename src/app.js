@@ -9,7 +9,7 @@ import listingTemplate from './views/landing.pug'
 const loadListingPage = () => {
   const todos = getData().todos.sort( todoSort )
   const completed = todos.filter( todo => todo.complete )
-  const percentComplete = Math.round( 100 * completed.length / todos.length * 1.0 )
+  const percentComplete = Math.round( 100 * completed.length / todos.length * 1.0 ) || 0
 
   document.getElementById( 'content' ).innerHTML =
     listingTemplate({ todos, percentComplete })
