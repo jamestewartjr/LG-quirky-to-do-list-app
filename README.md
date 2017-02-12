@@ -1,12 +1,10 @@
-# quirky-crake
+# Quirky To Do List App
 A to do list app.
-# To Do List
-## Description
 
+## Description
 Complete a to do list app.
 
 ## Context
-
 Create a front to do list SPA.
 
 ### Goals
