@@ -1,11 +1,13 @@
 # Quirky To Do List App
 A to do list app.
 
+Please visit SETUP.md for install instructions.
+
 ## Description
 Complete a to do list app.
 
 ## Context
-Create a front to do list SPA.
+Create a frontend to do list single page application.
 
 ### Goals
 - Go through the whole process of creating and deploying a working app in a week.
@@ -19,7 +21,7 @@ Create a front to do list SPA.
 As a user...
 - [X] I can create to do list items.
 - [X] I can check items off as complete.
-- [X] I can rearrange to do list items. 
+- [X] I can rearrange to do list items.
 - [X] I can delete unwanted to do list items.
 - [X] I can edit the text on existing to do's.
 
